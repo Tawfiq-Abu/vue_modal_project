@@ -3,7 +3,7 @@
   <div v-if="showModal">
     <Modal v-bind:header="header" :text="text" theme='sale' @close="toggleModal"/>
   </div>
-  <button @click="toggleModal">show modal</button>
+  <button @click.alt="toggleModal">show modal(alt)</button>
   
   <!-- <input type="text" ref="name">
   <button @click="handleClick">Click me</button> -->
