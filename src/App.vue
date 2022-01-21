@@ -1,6 +1,6 @@
 <template>
   <h1>{{ title }}</h1>
-  <Modal />
+  <Modal v-bind:header="header" :text="text" theme='sale' />
   <!-- <input type="text" ref="name">
   <button @click="handleClick">Click me</button> -->
 </template>
@@ -14,7 +14,9 @@ export default {
   components: { Modal},
   data () {
     return {
-      title:'My first Vue App:)'
+      title:'My first Vue App:)',
+      header:'this is some text inside the props',
+      text:'Elements of programming interviews in python'
     }
   },
   methods: {

@@ -1,12 +1,20 @@
 <template>
     <div class="backdrop">
-        <div class="modal">
-            <p>modal content</p>
+        <div class="modal" :class="{sale: theme === 'sale'}">
+            <h1>{{ header }}</h1>
+            <p>{{ text }}</p>
         </div>
     </div>
 </template>
 
-<styleo scoped>
+<script>
+export default {
+    props: ['header','text', 'theme'],
+}
+</script>
+
+
+<style scoped>
 .modal {
     width:400px;
     padding:20px;
@@ -20,5 +28,17 @@
     background:rgba(0,0,0,0.5);
     width:100%;
     height:100%
+}
+h1 {
+    font-weight:bold;
+    font-style:sans-serif italic;
+    color:hotpink;
+}
+.modal.sale{
+    background:crimson;
+    color:white;
+}
+.modal.sale h1 {
+    color:white;
 }
 </style>
