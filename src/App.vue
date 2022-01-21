@@ -1,6 +1,10 @@
 <template>
   <h1>{{ title }}</h1>
-  <Modal v-bind:header="header" :text="text" theme='sale' />
+  <div v-if="showModal">
+    <Modal v-bind:header="header" :text="text" theme='sale' @close="toggleModal"/>
+  </div>
+  <button @click="toggleModal">show modal</button>
+  
   <!-- <input type="text" ref="name">
   <button @click="handleClick">Click me</button> -->
 </template>
@@ -16,7 +20,8 @@ export default {
     return {
       title:'My first Vue App:)',
       header:'this is some text inside the props',
-      text:'Elements of programming interviews in python'
+      text:'Elements of programming interviews in python',
+      showModal:false,
     }
   },
   methods: {
@@ -24,6 +29,9 @@ export default {
       console.log(this.$refs.name)
       this.$refs.name.classList.add('active')
       this.$refs.name.focus()
+    },
+    toggleModal(){
+      this.showModal = !this.showModal
     }
   }
 }
