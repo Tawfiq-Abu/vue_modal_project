@@ -1,7 +1,11 @@
 <template>
   <h1>{{ title }}</h1>
   <div v-if="showModal">
-    <Modal v-bind:header="header" :text="text" theme='sale' @close="toggleModal"/>
+    <Modal v-bind:header="header" :text="text" theme='sale' @close="toggleModal">
+      
+      <h1>okay now this is using a slot instead of a prop</h1>
+      <p>interesting items being learnt over here man</p>
+    </Modal>
   </div>
   <button @click.alt="toggleModal">show modal(alt)</button>
   

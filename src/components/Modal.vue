@@ -1,8 +1,12 @@
 <template>
     <div class="backdrop" @click.self="closeModal">
         <div class="modal" :class="{sale: theme === 'sale'}">
-            <h1>{{ header }}</h1>
-            <p>{{ text }}</p>
+            <!-- <h1>{{ header }}</h1>
+            <p>{{ text }}</p> -->
+            <slot></slot>
+            <div class="links">
+                <slot name="links"></slot>
+            </div>
             <button @click="closeModal">hideModal</button>
         </div>
     </div>
