@@ -4,7 +4,7 @@
             <!-- <h1>{{ header }}</h1>
             <p>{{ text }}</p> -->
             <slot></slot>
-            <div class="links">
+            <div class="actions">
                 <slot name="links"></slot>
             </div>
             <button @click="closeModal">hideModal</button>
@@ -24,7 +24,7 @@ export default {
 </script>
 
 
-<style scoped>
+<style>
 .modal {
     width:400px;
     padding:20px;
@@ -48,7 +48,30 @@ h1 {
     background:crimson;
     color:white;
 }
-.modal.sale h1 {
+.modal .sale h1 {
+    color:white;
+}
+.modal .actions{
+    text-align:center;
+    margin:30px 0 10px 0;
+}
+
+.modal .actions a {
+    color:#333;
+    padding:8px;
+    border:1px solid #eee;
+    border-radius: 4px;
+    text-decoration:none;
+    margin:10px;
+}
+
+.modal.sale .actions a{
+    color:white;
+}
+.modal.sale .actions {
+    color:white;
+}
+.modal.sale .actions h1{
     color:white;
 }
 </style>

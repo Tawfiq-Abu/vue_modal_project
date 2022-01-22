@@ -3,7 +3,7 @@
   <div v-if="showModal">
     <Modal v-bind:header="header" :text="text" theme='sale' @close="toggleModal">
       <template v-slot:links>
-        <a href="#">About us</a>
+        <a href="#" class="lil">About us</a>
         <a href="#">Contact us</a>
       </template>
       <h1>okay now this is using a slot instead of a prop</h1>
