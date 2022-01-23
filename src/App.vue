@@ -10,7 +10,16 @@
       <p>interesting items being learnt over here man</p>
     </Modal>
   </div>
+
+  <div v-if="showModalTwo">
+    <Modal @close="toggleModalTwo">
+      <h1>Sign up to our channel </h1>
+      <p>For interesting contents and giveaways</p>
+    </Modal>
+  </div>
+
   <button @click.alt="toggleModal">show modal(alt)</button>
+  <button @click="toggleModalTwo">show modal</button>
   
   <!-- <input type="text" ref="name">
   <button @click="handleClick">Click me</button> -->
@@ -26,9 +35,8 @@ export default {
   data () {
     return {
       title:'My first Vue App:)',
-      header:'this is some text inside the props',
-      text:'Elements of programming interviews in python',
       showModal:false,
+      showModalTwo:false,
     }
   },
   methods: {
@@ -39,6 +47,9 @@ export default {
     },
     toggleModal(){
       this.showModal = !this.showModal
+    },
+    toggleModalTwo(){
+      this.showModalTwo = !this.showModalTwo
     }
   }
 }
